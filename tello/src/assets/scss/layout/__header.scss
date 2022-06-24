@@ -1,0 +1,304 @@
+//* NAVBAR *//
+
+.navbar{
+    height: 125px;
+    width: 100%;
+    position: fixed;
+    z-index: 10000;
+    background-color: white;
+    padding: 10px 16px 0 0;
+    border-bottom: 2px solid rgba(45, 208, 110, 1);
+    // overflow-y: hidden;
+
+    //? FOR-DESKTOP ?//
+    @include for-desktop{
+        padding: 10px 16px 0 16px;
+     }
+
+    &_brand{
+        @include flex(wrap,row,space-between,center);
+        height: 50%;
+
+        //? FOR-DESKTOP ?//
+        @include for-desktop{
+            width: 90%;
+            margin: auto;
+         }
+
+        .logo{
+            z-index: 1111;
+            margin-left: -30px;
+            img{
+                width: 130px;
+                height: 50px;
+            }
+
+            //? FOR-DESKTOP ?//
+            @include for-desktop{
+                margin: 0px;
+            }
+        }
+
+        .search {
+            order: 1;
+            position: relative;
+            width: 350px;
+            height: 40px;
+            padding-left: 16px;
+
+            img{
+                position: absolute;
+                top:50%;
+                transform: translateY(-50%);
+                left:30px;
+            }
+            
+            //? FOR-DESKTOP ?//
+            @include for-desktop{
+               order:0;
+            }
+
+            input{
+                width: 100%;
+                height: 100%;
+                background: #F2F2F2;
+                border: 1px solid #E0E0E0;
+                border-radius: 8px;
+                padding: 0 10px 0 50px;
+
+                &::placeholder{
+                    @include font(14px,400);
+                }
+
+                &:focus{
+                    outline: none;
+                    border: 1px solid #BDBDBD;
+                }
+            }
+
+            //? FOR-DESKTOP ?//
+            @include for-desktop{
+                width: 590px;
+            }
+        }
+
+        .profile_content{
+            @include flex(nowrap,row,space-between,center);
+            gap:10px;
+
+            .user,
+            .fav,
+            .cart{
+
+                &:hover{
+                    filter: grayscale(100%) brightness(170%) sepia(300%) hue-rotate(50deg) saturate(500%);
+                    transition: 0.3s;
+                    cursor: pointer;
+                }
+            }
+            
+
+            //? FOR-DESKTOP ?//
+            @include for-desktop{
+                gap:25px;
+            }
+        }
+    }
+
+    //* MENU *//
+    &_catalog{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        position:fixed;
+        top: 0;
+        left: -100%;
+        background-color: white;
+        transition: 0.5s;
+        z-index: 1000;
+
+
+        .categories{
+            padding: 5px 20px;
+            margin-top: 65px;
+            border-top: 1px solid #303030;
+
+            //? FOR-DESKTOP ?//
+            @include for-desktop{
+               padding: 0;
+               margin-top: 0;
+               border:none;
+            }
+    
+            .nav-link{
+                gap:30px;
+                @include font(20px,400);
+                padding: 15px 0;
+                cursor: pointer;
+
+                //? FOR-DESKTOP ?//
+                @include for-desktop{
+                    padding: 0;
+
+                    &:hover .sub-link{
+                        display: flex;
+                        cursor: default;
+                        position: fixed;     
+                    }
+                }
+    
+                .sub-link{
+                    display: none;
+                }
+    
+            }
+    
+        }
+    }
+}
+
+
+//* MENU FOR DESKTOP *//
+
+//? FOR-DESKTOP ?//
+@include for-desktop{
+    
+    .navbar_catalog{
+        height: 50%;
+        position: static;
+    }
+
+  .categories{
+      width: 90%;
+      margin: auto;
+      height: 100%;
+      padding: 0;
+      @include flex(wrap,row,flex-start,flex-end);
+      gap:50px;
+  }
+
+  .nav-link{
+    position: relative;
+    padding: 0;
+    display: flex;
+
+    a{
+        @include font(14px,400,20px);
+        padding-bottom: 10px;
+        color: #4F4F4F;
+
+        &:hover{
+            color:rgba(0, 214, 143, 1);
+            transition: 0.3s;
+        }
+    }
+
+  }
+
+  .sub-link{
+    @include flex(nowrap,row,flex-start,flex-start);
+    gap: 10%;
+    padding: 3% 6% 10% 6%;
+    margin-top: 32px;
+    position: absolute;
+    left:0;
+    z-index: 100;
+    background-color: white;
+    width: 100%;
+    height: auto;
+    display: none;
+    p{
+        color: #4F4F4F;
+        @include font(16px,500,24px);
+    }
+
+    .black-page{
+        position: absolute;
+        width: 100%; 
+        height: 100vh;
+        background-color: #00000080;
+        top: 100%;
+        left: 0;
+    }
+  }
+
+  .sub2-link{
+    margin: 6px 0;
+    color: #4F4F4F;
+    @include font(14px,400,20px);
+    cursor: pointer;
+
+    &:hover{
+        color:rgba(0, 214, 143, 1);
+        transition: 0.3s;
+    }
+  }
+
+  .hide{
+    display: none;
+  }
+
+}
+
+.active{
+    color:rgba(0, 214, 143, 1) !important;
+}
+
+.show{
+    left: 0;
+}
+
+
+
+//* NAVBAR TOGGLE *//
+.navbar_toggle{
+
+    //? FOR-DESKTOP ?//
+    @include for-desktop{
+        display: none;
+    }
+
+    position: relative;
+
+    .toggle{
+        position: absolute;
+        top: -14px;
+        left: 15px;
+        z-index: 10000;
+        cursor: pointer;
+        
+    
+        .line{
+            height: 2.4px;
+            width: 22px;
+            background-color: #2E3A59;
+            margin: 4px;
+            transition: 2s;
+            transform: rotate(0deg);
+        }   
+    }
+
+    .x-btn{
+        position: relative;
+        top: -10px;
+        left: 15px;
+
+        .left-line{
+            transition: 2s;
+            position: absolute;
+            transform: rotate(45deg);
+        }
+
+        .hide-line{
+            position: absolute;
+            transition: 1.2s;
+            opacity: 0;
+        }
+
+        .right-line{
+            transition: 2s;
+            position: absolute;
+            transform: rotate(-45deg);
+        }
+    }
+}

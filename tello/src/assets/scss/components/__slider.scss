@@ -1,0 +1,110 @@
+.swiper-header {
+    width: 100%;
+    height: 100%;
+    
+  
+  .swiper-slide {
+    flex-direction: column-reverse;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 3% 6% 5% 6%;
+    gap:40px;
+
+    //? FOR-DESKTOP ?//
+    @include for-desktop{
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      flex-direction: row;
+      gap:10%;
+    }
+
+    .content{
+        @include flex(nowrap,column,center,center);
+        gap:25px;
+
+        //? FOR-DESKTOP ?//
+        @include for-desktop{
+          width: 50%;
+          @include flex(nowrap,column,center,flex-start);
+          padding-bottom: 30px;
+          gap:30px;
+        }
+        
+        .text-bold{
+            @include font(24px,600,32px);
+            text-align: center;
+
+            //? FOR-DESKTOP ?//
+            @include for-desktop{
+              @include font(50px,600,64px);
+              text-align: left;
+            }
+        }
+
+        .text{
+            @include font(16px,400,24px);
+            text-align: center;
+            max-width: 500px;
+
+            //? FOR-DESKTOP ?//
+            @include for-desktop{
+              text-align: left;
+            }
+        }
+    }
+
+    .img-content{
+      width: 55%;
+      margin-top: 20px;
+
+      //? FOR-DESKTOP ?//
+      @include for-desktop{
+        width: 50%;
+        margin: 0;
+      }
+
+      img{
+        width:100%;
+        display: block;
+        object-fit: cover;
+      }
+    }
+  }
+  
+}
+
+.swiper-pagination{
+  display: none;
+
+  //? FOR-DESKTOP ?//
+  @include for-desktop{
+    display: block;
+    
+    .swiper-pagination-bullet{
+      background-color:rgba(0, 214, 143, 1);
+    }
+  }
+}
+
+  .back-img{
+    background-image:url('../../images/Rectangle\ 156\ \(1\).png');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:-70px -10px;
+
+     //? FOR-DESKTOP ?//
+     @include for-desktop{
+      background-size:cover;
+      background-position:-100px 10px;
+     }
+  }

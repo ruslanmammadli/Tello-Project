@@ -1,0 +1,16 @@
+//! UTILS FOLDER
+@import "./utils/_mixin";  // MIXIN //
+@import "./utils/_variables"; // VARIABLES //
+
+//! BASE FOLDER
+@import "./base/reset";  // RESET //
+
+//! LAYOUT FOLDER
+@import "./layout/_header"; // HEADER //
+@import "./layout/_footer"; // FOOTER //
+
+//! COMPONENTS FOLDER
+@import "./components/_slider"; // SLIDER //
+
+//! PAGES FOLDER
+@import "./pages/_home"; // HOME PAGE //
