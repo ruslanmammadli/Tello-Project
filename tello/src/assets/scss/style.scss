@@ -10,7 +10,9 @@
 @import "./layout/_footer"; // FOOTER //
 
 //! COMPONENTS FOLDER
-@import "./components/_slider"; // SLIDER //
+@import "./components/_bannerSwipe"; //BANNER SLIDER //
+@import "./components/_productsSwipe"; //PRODUCTS SLIDER //
+@import "./components/_skeletons"; //SKELETONS //
 
 //! PAGES FOLDER
 @import "./pages/_home"; // HOME PAGE //

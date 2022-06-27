@@ -10,12 +10,12 @@ import "swiper/css/pagination";
 import { Pagination,Autoplay } from "swiper";
 
 
-function Carousel() {
+function BannerSwipe() {
 
   const {Mobile} = images;
     
   const pagination = {
-    clickable: true,
+    clickable: "true",
     autoplay: {
       delay: 3000,
       disableOnInteraction: false,
@@ -29,7 +29,7 @@ function Carousel() {
       {...pagination}
       loop={true}
       pagination={pagination}
-      className="swiper-header" 
+      className="banner-swiper" 
       modules={[Pagination, Autoplay]} 
       spaceBetween={80} 
       >
@@ -59,7 +59,7 @@ function Carousel() {
             <img src={Mobile} alt="logo"/>
           </div>
         </SwiperSlide>
-        <SwiperSlide >
+        <SwiperSlide>
           <div className='content'>
             <p className='text-bold'>Buy & Sell
               <br/>
@@ -77,4 +77,4 @@ function Carousel() {
   )
 }
 
-export default Carousel
+export default BannerSwipe

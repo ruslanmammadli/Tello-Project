@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import { NavLink } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
-import {commerce} from '../../../commerce.js'
+import commerce from "../../../commerce.js"
 
 
 const Menu = () => {

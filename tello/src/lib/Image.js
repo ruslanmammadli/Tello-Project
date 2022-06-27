@@ -6,6 +6,7 @@ import Logo from '../assets/icons/Logo.png'
 import Basket from '../assets/icons/shopping-cart.svg'
 import Favourite from '../assets/icons/favourite.svg'
 import Search from '../assets/icons/search.svg'
+import RightArr from '../assets/icons/arrow-right.svg'
 
 //* Images
 import Mobile from '../assets/images/carousel mobile.svg'
@@ -17,6 +18,7 @@ export const icons={
     Basket,
     Favourite,
     Search,
+    RightArr,
 }
 
 //* Image

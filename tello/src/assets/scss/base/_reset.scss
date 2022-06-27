@@ -17,7 +17,7 @@ body{
     margin: auto;
 }
 
-.swiper{
+.banner-swiper{
     &::before{
         content:"";
         display:block;
@@ -27,6 +27,7 @@ body{
 
 a{
     text-decoration: none;
+    color:black;
 }
 
 ul{

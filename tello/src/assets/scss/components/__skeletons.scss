@@ -1,0 +1,33 @@
+// * PRODUCTS-SKELETON *//
+
+.swipe-sk{
+    width: 100%;
+    @include flex(nowrap,column,center,center);
+    gap:10px;
+
+    span{
+        &:nth-child(1){
+            height: 150px;
+
+            @include for-desktop{
+                height: 200px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+.sk-img{
+    width: 80%;
+}
+
+.sk-title{
+    width: 100%;
+    align-self: flex-start;
+}
+
+.sk-text{
+    width: 60%;
+    align-self: flex-start;
+}
+
