@@ -1,3 +1,5 @@
 // import axios from "./index";
 
-// export const getProducts = () => axios.get("/products", {});
+// const getProducts = () => axios.get("/products",{})
+
+// export { getProducts }

@@ -1,29 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  loading: true,
-  phone: [],
-  accessory:[],
+  loading: false,
+  fetchProducts: [],
 };
 
 const productsReducer = createSlice({
   name: "products",
   initialState,
   reducers: {
-    setPhone: (state, { payload }) => {
-      state.phone=payload
-      state.loading = false;
-    },
-    setAccessory: (state, { payload }) => {
-      state.accessory = payload;
-      state.loading = false;
-    },
-    setFetchStatus: (state,{ payload })=>{
-      state.fetchProduct = payload
+    setProducts: (state, { payload }) => {
+      state.fetchProducts=payload
+      state.loading = true;
     },
   },
 });
 
-export const {setPhone,setAccessory} = productsReducer.actions
+export const {setProducts} = productsReducer.actions
 
 export default productsReducer.reducer;

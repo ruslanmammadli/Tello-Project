@@ -3,9 +3,9 @@
 
 // export const getProductsAsync = createAsyncThunk(
 //   "product/fetchProducts",
-//   async (_, { rejectWithValue }) => {
+//   async (_, { slug }) => {
 //     try {
-//       const res = await api.getProducts();
+//       const res = await api.getProducts(slug);
 //       return res.data;
 
 //     } catch (err) {
@@ -13,7 +13,7 @@
 //         throw err;
 //       }
 
-//       return rejectWithValue(err.response.data);
+//       return slug(err.response.data);
 //     }
 //   }
 // );

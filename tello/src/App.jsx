@@ -15,7 +15,6 @@ function App() {
     // commerce.products.list().then((product) => console.log(product));
     // commerce.categories.list().then((category) => console.log(category));
     
-    
   }, [])
   
 

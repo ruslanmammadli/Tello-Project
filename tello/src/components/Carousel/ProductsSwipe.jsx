@@ -12,15 +12,27 @@ const ProductsSwipe = (props) => {
     <div className='products'>
         <div className='products_title'>
             <h3>{props.title}</h3>
-            <Link to={props.link}>
+            <Link to={props.slug}>
                 <p className='look-all'>
                     Hamısına bax
                     <img src={RightArr} alt="arrow" />
                 </p>
             </Link>
         </div>
-        <Swiper slidesPerView={"auto"} spaceBetween={40} className="products_swiper">
-            {props.loading ? (
+        <Swiper 
+        breakpoints={{
+            390:{
+                maxWidth: 390,
+                slidesPerView:"auto"
+            },
+            992:{
+                minWidth: 992,
+                slidesPerView:4
+            },
+        }}  
+        spaceBetween={40} 
+        className="products_swiper">
+            {!props.loading ? (
                     Array(7)
                     .fill()
                     .map((item, index) => (
@@ -30,7 +42,7 @@ const ProductsSwipe = (props) => {
                     ))
 
                 ) : (
-            props.data.map((item) => (
+            props.data.slice(0,7).map((item) => (
                 <SwiperSlide key={item.id}>
                     <Link className="link-swiper" to={`${item.name.split(' ')[0].toLowerCase()}/${item.id}`}>
                         <div className='pr-img'>
