@@ -4,7 +4,7 @@ import Skeleton from '@mui/material/Skeleton';
 
 const SkeletonPhone = ()=>{
     return(
-        <div className="swipe-sk">
+        <div className="products-sk">
             <Skeleton 
             className="sk-img"
             variant="rectangular"

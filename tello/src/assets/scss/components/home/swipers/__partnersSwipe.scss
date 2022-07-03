@@ -1,0 +1,24 @@
+.partners{
+    display: none;
+
+    //* FOR-DESKTOP
+    @include for-desktop{
+        @include flex(nowrap,row,center,center);
+        width: 100%;
+        height: 250px;
+        margin-top:5%;
+        background-color:#F5F5F7;
+
+        &_card{
+            width: 90%;
+            height: 60%;
+            padding: 10px 10px 15px 10px;
+
+            .swiper-slide{
+                img{
+                    width: 90%;
+                }
+            }
+        }
+    }
+}

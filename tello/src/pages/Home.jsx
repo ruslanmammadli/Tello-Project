@@ -1,9 +1,11 @@
 import React,{useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import BannerSwipe from '../components/Carousel/BannerSwipe'
-import ProductSwipe from '../components/Carousel/ProductsSwipe'
-import ProductsBanner from '../components/Banners/ProductsBanner'
-import Banner from '../components/Banners/Banner'
+import BannerSwipe from '../components/Home/Carousel/BannerSwipe'
+import ProductSwipe from '../components/Home/Carousel/ProductsSwipe'
+import ProductsBanner from '../components/Home/Banners/ProductsBanner'
+import Banner from '../components/Home/Banners/Banner'
+import Advantage from '../components/Home/Advantage/Advantage'
+import PartnersSwipe from '../components/Home/Carousel/PartnersSwipe'
 
 import { setProducts } from '../redux/reducers/productsReducer'
 import { images } from '../lib/Image'
@@ -11,9 +13,10 @@ import { images } from '../lib/Image'
 import commerce from "../commerce.js"
 
 
+
 const Home = () => {
 
-  const {Iphone13,IphoneAirTag,AirTag,Xiaomi,Watch,Accessory}=images
+  const {Xiaomi,Watch,Accessory}=images
 
   const dispatch=useDispatch();
   const allProducts=useSelector((state)=>state.products.fetchProducts)
@@ -67,32 +70,10 @@ const Home = () => {
         loading={loading}
         data={setData("butun-brendler")}
         />
-        <div className='banner-section'>
-          <Banner
-          className={"banner-wh"}
-          txt={"Iphone 13."}
-          txtSecond={"Rəngli. Güclü."}
-          txtThird={"Əsl sizə lazım olan."}
-          price={"2089 AZN"}
-          priceTxt={"Faizsiz taksitlə 127 AZN-dən"}
-          slug={"apple/prod_gvRjwOqNmB54mN"}
-          img={Iphone13}
-          />
-          <Banner
-          className={"banner-gr"}
-          txt={"AirTag"}
-          txtSecond={"Əşyalarınızı tapmağın"}
-          txtThird={"super asan yolu."}
-          price={"79"}
-          priceTxt={"AZN-dən*"}
-          slug={"apple/prod_BkyN5Y1Nj950b6"}
-          img={IphoneAirTag}
-          imgAdd={AirTag}
-          />
-        </div>
+        <Banner/>
         <ProductSwipe
         title="Yeni gələn aksessuarlar"
-        slug={"/butun-aksessuarlar"}
+        slug={"/aksessuarlar"}
         loading={loading}
         data={setData("aksessuarlar")}
         />
@@ -108,18 +89,20 @@ const Home = () => {
           className={"watch-card"}
           title={"Smart Saat"}
           count={setData("aksessuarlar").length}
-          slug={"/butun-aksessuarla"}
+          slug={"/aksessuarlar"}
           img={Watch}
           />
           <ProductsBanner
           className={"accessory-card"}
           title={"Aksesuar"}
           count={setData("aksessuarlar").length}
-          slug={"/butun-aksessuarla"}
+          slug={"/aksessuarlar"}
           img={Accessory}
           />
         </div>
+        <Advantage/>
       </div>
+      <PartnersSwipe/>
     </div>
   )
 }

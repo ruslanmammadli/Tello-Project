@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { icons } from '../../lib/Image';
+import { icons } from '../../../lib/Image';
 
 const ProductsBanner = (props) => {
 
-    const {RightArr}=icons
+   const {LinkArr}=icons
 
   return (
     <div className={props.className}>
@@ -15,7 +15,7 @@ const ProductsBanner = (props) => {
             </p>
             <Link to={props.slug}>
                 Məhsullara keçid
-                <img src={RightArr} alt="arrow" />
+                <img src={LinkArr} alt="arrow" />
             </Link>
         </div>
         <div className={`${props.className}_img`}>

@@ -1,0 +1,144 @@
+.footer{
+    background-color: #262626;
+    color: white;
+
+    .first-sec{
+        @include flex(nowrap,column,center,center);
+        padding: 17% 10%;
+        gap: 50px;
+
+        //* FOR-DESKTOP *//
+        @include for-desktop{
+            @include flex(nowrap,row,space-between,flex-start);
+            padding: 3% 6% 4%;
+            gap: 0;
+        }
+
+        .soc-link{
+            @include flex(nowrap,column,center,center);   
+            gap: 25px;
+            width: 100%;
+            
+
+            // //* FOR-DESKTOP *//
+            @include for-desktop{
+                @include flex(nowrap,column,center,flex-start);
+            }
+
+            img{
+                width: 150px;
+            }
+
+            &_icons{
+                @include flex(nowrap,row,center,center);   
+                gap: 20px;
+
+                img{
+                    width: 20px;
+
+                    &:nth-child(2){
+                        width: 13px;
+                    }
+                }
+            }
+        }
+
+        ul{
+            @include flex(nowrap,column,center,center); 
+            gap:15px;
+            width: 100%;
+
+            //* FOR-DESKTOP *//
+            @include for-desktop{
+               @include flex(nowrap,column,center,flex-start); 
+               padding-top:10px;
+            }
+
+            p{
+                @include font(20px,500,24px);
+                padding:10px;
+
+                //* FOR-DESKTOP *//
+                @include for-desktop{
+                    padding:0 0 10px 0;
+                }
+            }
+
+            a{
+                color: #FFFFFF;
+            }
+
+            li{
+                @include font(16px,400,24px);
+                opacity:0.8;
+                cursor: pointer;
+
+                &:hover{
+                    color: #2DD06E;
+                    transition: 0.3s;
+                }
+            }
+        }
+
+        ul:nth-child(4){
+            @include flex(nowrap,column,center,flex-start); 
+            p{
+                align-self:center;
+
+                //* FOR-DESKTOP *//
+                @include for-desktop{
+                    align-self:flex-start;
+                }
+            }
+
+            li{
+                @include flex(nowrap,row,center,center);  
+                gap:15px;
+
+                &:nth-child(2){
+                    color: #2DD06E;
+                }
+            } 
+        }
+        
+    }
+
+    .second-sec{
+        @include flex(nowrap,column,center,center);
+        padding: 30px 5%;
+        opacity: 0.8;
+        border-top: 1px solid #ffffff92;
+        position: relative;
+
+        // //* FOR-DESKTOP *//
+        @include for-desktop{
+            @include flex(nowrap,row,space-between,center);
+        }
+
+        .copyright{
+            @include font(16px,400,20px);
+
+            &::before {
+                content:"\00a9   ";
+            }
+        }
+
+        .rules{
+            @include flex(nowrap,row,space-between,center);
+            gap:65px;
+            order: -1;
+            position: absolute;
+            top: -40px;
+
+            // //* FOR-DESKTOP *//
+            @include for-desktop{
+                order:0;
+                position: static;
+            }
+            
+            p{
+                @include font(14px,400,24px);
+            }
+        }
+    }
+}

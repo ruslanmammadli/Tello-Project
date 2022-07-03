@@ -10,10 +10,13 @@
 @import "./layout/_footer"; // FOOTER //
 
 //! COMPONENTS FOLDER
-@import "./components/_bannerSwipe"; //BANNER SLIDER //
-@import "./components/_productsSwipe"; //PRODUCTS SLIDER //
-@import "./components/_skeletons"; //SKELETONS //
-@import "./components/_banner";  //BANNER//
+@import "./components/home/swipers/_bannerSwipe"; //BANNER SLIDER //
+@import "./components/home/swipers/_productsSwipe"; //PRODUCTS SLIDER //
+@import "./components/home/swipers/_partnersSwipe"; //PARTNERS SLIDER //
+@import "./components/home/banners/_banner";  //BANNER//
+@import "./components/home/banners/_productsBanner"; //PRODUCTS BANNER //
+@import "./components/home/_advantage"; // ADVANTAGE //
+@import "./components/skeleton/_skeletons"; //SKELETONS //
 
 //! PAGES FOLDER
 @import "./pages/_home"; // HOME PAGE //

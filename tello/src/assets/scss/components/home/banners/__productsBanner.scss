@@ -1,0 +1,146 @@
+.pr-banner{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 450px 220px 220px;
+    gap:20px;
+    padding: 0 10px;
+    margin-top: 30px;
+
+    //* FOR-DESKTOP
+    @include for-desktop{
+        grid-template-columns: minmax(auto, 50%) minmax(auto, 50%);
+        grid-template-rows: 400px 400px;
+        margin-top: 7%;
+    }
+
+    .phone-card,
+    .watch-card,
+    .accessory-card{
+        display: flex;
+        flex-direction: column;
+        background: rgb(242,228,221);
+        background: linear-gradient(180deg, rgba(242,228,221,1) 0%, rgba(233,233,233,1) 100%);
+        border-radius: 8px;
+        padding: 30px;
+        contain: content;
+
+        //* FOR-DESKTOP
+        @include for-desktop{
+            padding: 40px;
+        }
+
+
+        &_content{
+            @include flex(nowrap,column,center,flex-start);
+            gap:20px;
+
+            h4{
+                @include font(16px,500,18px);
+            }
+
+            p{
+                @include font(12px,400,13px);
+                span{
+                    padding-left: 3px;
+                }
+               
+            }
+
+            a{
+                @include font(12px,400,13px);
+                color: #3366FF;
+                @include flex(nowrap,row,center,center);
+                gap:10px;
+            }
+
+            //* FOR-DESKTOP
+            @include for-desktop{
+                h4{
+                    @include font(25px,500,32px);
+                }
+
+                p{
+                    @include font(16px,400,25px);
+                }
+
+                a{
+                    @include font(16px,400,25px);
+                }
+            }
+        }
+
+        &_img{
+            img{
+                position: fixed;
+                bottom: 0;
+                right: 0;
+            }
+        }
+    }
+
+    .phone-card{
+        grid-column:1/2;
+        grid-row:1/2;
+
+         //* FOR-DESKTOP
+         @include for-desktop{
+            grid-column:1/2;
+            grid-row:1/3;
+         }
+
+        &_img{
+            img{
+                width: 100%;
+            }
+        }
+    }
+
+    .watch-card{
+        grid-column:1/2;
+        grid-row:2/3;
+
+        &_img{
+            img{
+                right: 20px;
+                width: 45%;
+            }
+        }
+
+         //* FOR-DESKTOP
+         @include for-desktop{
+            grid-column:2/3;
+            grid-row:1/2;
+
+            &_img{
+                img{
+                    right: 40px;
+                    width: 35%;
+                }
+            }
+         }
+    }
+
+    .accessory-card{
+        grid-column:1/2;
+        grid-row:3/4;
+
+        &_img{
+            img{
+                right: 10px;
+                width: 50%;
+            }
+        }
+
+        //* FOR-DESKTOP
+        @include for-desktop{
+            grid-column:2/3;
+            grid-row:2/3;
+
+            &_img{
+                img{
+                    right: 30px;
+                }
+            }
+        }
+    }
+}

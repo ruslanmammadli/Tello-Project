@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Banner = (props) => {
+const BannerCard = (props) => {
   return (
     <div className={props.className}>
         <div className='banner_content'>
@@ -26,4 +26,4 @@ const Banner = (props) => {
   )
 }
 
-export default Banner
+export default BannerCard

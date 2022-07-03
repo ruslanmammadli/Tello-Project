@@ -1,7 +1,7 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import {images} from '../../lib/Image'
+import {images} from '../../../lib/Image'
 
 import "swiper/css"
 

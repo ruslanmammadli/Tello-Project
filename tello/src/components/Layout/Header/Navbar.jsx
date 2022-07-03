@@ -14,8 +14,7 @@ const Navbar = () => {
 
   const dispatch = useDispatch()
   const hamburger = useSelector((state)=> state.hamburger.show)
-  console.log(hamburger);
-
+  
   const hamburgerToggle = ()=>{
     if(!hamburger){
         dispatch(toggle(true))

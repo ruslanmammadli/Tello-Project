@@ -1,27 +1,36 @@
-import React,{useState,useEffect} from 'react'
+import React,{useEffect} from 'react'
 import { NavLink } from "react-router-dom";
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { setMenu } from '../../../redux/reducers/productsReducer.js';
 
 import commerce from "../../../commerce.js"
 
 
 const Menu = () => {
-  
-  const [products, setProducts] = useState([]);
 
+  const dispatch = useDispatch()
   const hamburger = useSelector((state)=> state.hamburger.show)
+  const menu= useSelector((state)=>state.products.menuProducts)
 
   useEffect(() => {
-    commerce.categories.retrieve('products', { type: 'slug',depth:'3' })
-        .then((products) => setProducts(products.children));
-  }, [])
+    const fetchMenu=()=>{
+      commerce.categories.retrieve('products', { type: 'slug',depth:'3' })
+      .then((products) => {
+        dispatch(setMenu(products.children))
+      }).catch((error) => {
+        console.log(error)
+      });
+    }
+
+    fetchMenu()
+  }, [dispatch])
 
 
   return (
     <div className={hamburger ? "navbar_catalog show" : "navbar_catalog"}>
         <ul className='categories'>
-          {
-            products.map((product)=>(
+          {menu && 
+            menu.map((product)=>(
               <li 
               className='nav-link'
               key={product.id}>

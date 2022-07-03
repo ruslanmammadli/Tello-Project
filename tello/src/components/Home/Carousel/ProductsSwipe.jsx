@@ -2,8 +2,8 @@ import React from 'react'
 
 import { Swiper,SwiperSlide } from 'swiper/react';
 import { Link } from "react-router-dom";
-import { icons } from '../../lib/Image';
-import ProductsSkeleton from '../../components/Skeleton/ProductsSkeleton'
+import { icons } from '../../../lib/Image';
+import ProductsSkeleton from '../../Skeleton/ProductsSkeleton'
 
 const ProductsSwipe = (props) => {
     const {RightArr}=icons
@@ -40,7 +40,6 @@ const ProductsSwipe = (props) => {
                         <ProductsSkeleton/>
                     </SwiperSlide>
                     ))
-
                 ) : (
             props.data.slice(0,7).map((item) => (
                 <SwiperSlide key={item.id}>

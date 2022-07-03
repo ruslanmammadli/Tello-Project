@@ -1,6 +1,6 @@
 // * PRODUCTS-SKELETON *//
 
-.swipe-sk{
+.products-sk{
     width: 100%;
     @include flex(nowrap,column,center,center);
     gap:10px;
@@ -31,3 +31,23 @@
     align-self: flex-start;
 }
 
+
+// * BRANDS-SKELETON *//
+
+.brands-sk{
+    width: 100%;
+    height: 100%;
+    @include flex(nowrap,row,center,center);
+    position: absolute;
+    bottom:30px;
+
+    .brand-sk{
+        width: 80%;
+        height: 130px;
+    }
+    
+    span{
+        width: 250px;
+        height: 100%;
+    }
+}

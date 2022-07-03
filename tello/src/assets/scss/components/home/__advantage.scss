@@ -1,0 +1,51 @@
+.advantage{
+    width: 100%;
+    margin: 20% 0;
+    @include flex(wrap,column,center,center);
+    gap:50px;
+
+    //* FOR_DEKSTOP
+    @include for-desktop{
+        @include flex(nowrap,row,space-evenly,center);
+        margin: 10% 0;
+        gap:0;
+    }
+
+    &_card{
+        width: 100%;
+        @include flex(nowrap,column,center,center);
+        gap:20px;
+
+        img{
+            width: 25%;
+        }
+
+        h5{
+            @include font(20px,500,29px);
+            color: #333333;
+        }
+
+        p{
+            @include font(16px,400,25px);
+            color: #333333;
+            text-align: center;
+        }
+
+        //* FOR_DEKSTOP
+        @include for-desktop{
+            width: 25%;
+
+            img{
+                width: 30%;
+            }
+
+            h5{
+                @include font(20px,500,28px);
+            }
+    
+            p{
+                @include font(16px,400,24px);
+            }
+        }
+    }
+}
