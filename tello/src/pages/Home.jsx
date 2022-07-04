@@ -13,7 +13,6 @@ import { images } from '../lib/Image'
 import commerce from "../commerce.js"
 
 
-
 const Home = () => {
 
   const {Xiaomi,Watch,Accessory}=images
@@ -44,9 +43,7 @@ const Home = () => {
       element.categories.map(el => {
             if (el.slug === slug) {
                 data.push(element)
-            }else{
-              return false
-            }
+            }return false
         })
         return true
     })
